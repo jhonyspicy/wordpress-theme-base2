@@ -1,16 +1,39 @@
 {
-	"name":     "jhonyspicy/wordpress-theme-base",
-	"keywords": ["wordpress", "theme", "base"],
-	"license":  "LGPLv3",
+	"name": "jhonyspicy/wordpress-theme-base-template-twig",
+	"description": "This makes easier to make WordPress theme",
+	"type": "wordpress-theme",
+	"keywords": ["wordpress", "theme", "template"],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://wpackagist.org"
+		}
+	],
 	"require": {
 		"php": ">=5.3.3",
-		"symfony/finder": "~2.2"
+		"jhonyspicy/wordpress-theme-base": "*",
+		"atomita/php-utils": "*",
+		"atomita/wordpress-utils": "*",
+		"wpackagist-plugin/wp-multibyte-patch": "*",
+		"wpackagist-plugin/force-regenerate-thumbnails": "2.0.*",
+		"atomita/wordpress-thumbnail-filename-changer": "0.1.*",
+		"twig/twig": "1.*"
 	},
-	"description": "This makes easier to make WordPress theme",
 	"autoload": {
-		"classmap": ["src", "src/JhonySpicy/WordPress/Theme/Base/"]
+		"psr-0": {"": "classes/"}
 	},
-	"author":   {
-		"name": "Jhony Spicy"
+	"authors":[
+		{
+			"name": "Jhony Spicy"
+		},
+		{
+			"name": "atomita",
+			"homepage": "https://atomita.github.io/"
+		}
+	],
+	"extra": {
+		"installer-paths": {
+			"../../plugins/{$name}/": ["type:wordpress-plugin"]
+		}
 	}
 }

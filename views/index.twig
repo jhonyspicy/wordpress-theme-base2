@@ -1,0 +1,11 @@
+{% extends "layout/default.twig" %}
+
+{% block content %}
+	{% for post in posts %}
+	<article {{ func.post_class() }}>
+		<h2>{{ func.the_title() }}</h2>
+		<p>{{ func.the_excerpt() }}</p>
+		<div class="content">{{ func.the_content() }}</div>
+	{% endfor %}
+	</article>
+{% endblock %}
