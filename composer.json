@@ -11,7 +11,7 @@
 	],
 	"require": {
 		"php": ">=5.3.3",
-		"jhonyspicy/wordpress-theme-base": "*",
+		"jhonyspicy/wordpress-theme-base2": "*",
 		"atomita/php-utils": "*",
 		"atomita/wordpress-utils": "*",
 		"wpackagist-plugin/wp-multibyte-patch": "*",
