@@ -1,0 +1,1 @@
+# wordpress-theme-base2
