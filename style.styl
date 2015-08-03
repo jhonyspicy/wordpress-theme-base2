@@ -1,35 +1,72 @@
+@charset "utf-8"
+
+/*
+Theme Name: My Twig Theme
+Description: Starter Theme to use with Twig
+Author: Upstatement and YOU!
+*/
+
 @import './node_modules/nib/lib/nib'
+@import "styles/component/vars"
+@import "styles/component/mixin"
 
 //リセット
 global-reset()
 reset-html5()
 
 body
-	@import 'styles/header' //共通のヘッダー
-	@import 'styles/footer' //共通の風ったー
-	@import 'styles/pager' //共通のページャー
-	@import 'styles/breadcrumb' //共通のパンくず
-	@import 'styles/widgets' //共通のウィジェット
-	@import 'styles/contents' //共通のコンテンツ
+	//共通のヘッダー
+	header
+		@import 'styles/header'
 
-	&.home //トップページ用
-		@import 'styles/header-home'
-		@import 'styles/contents/home'
+	//共通のフッター
+	footer
+		@import 'styles/footer'
 
+	//共通のページャー
+	.pager
+		@import 'styles/pager'
+
+	//共通のウィジェット
+	.widgets
+		@import 'styles/widgets'
+
+	//共通のパンくず
+	.breadcrumb
+		@import 'styles/breadcrumb'
+
+	//共通のコンテンツ
+	#contents
+		@import 'styles/contents'
+
+	//トップページ
+	&.home
+		#contents
+			@import 'styles/contents/home'
+
+	//固定ページ
 	&.page
-		@import 'styles/contents/page'
+		#contents
+			@import 'styles/contents/page'
 
-	&.blog //投稿(post)アーカイブ用
-		@import 'styles/contents/blog'
+	//投稿(post)アーカイブ用
+	&.blog
+		#contents
+			@import 'styles/contents/blog'
 
-	&.single-post //投稿(post)詳細用
-		@import 'styles/contents/single-post'
+	//投稿(post)詳細用
+	&.single-post
+		#contents
+			@import 'styles/contents/single-post'
 
-	&.single-custom-post //カスタムポストの記事詳細用
-		@import 'styles/contents/single-custom-post'
+	//カスタムポストの記事詳細用
+	&.single-custom-post
+		#contents
+			@import 'styles/contents/single-custom-post'
 
-	&.post-type-archive-custom-post //カスタムポストのアーカイブ用
-		@import 'styles/contents/post-type-archive-custom-post'
-
+	//カスタムポストのアーカイブ用
+	&.post-type-archive-custom-post
+		#contents
+			@import 'styles/contents/archive-custom-post'
 
 

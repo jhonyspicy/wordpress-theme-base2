@@ -1,13 +1,10 @@
 @import '../../../../node_modules/nib/lib/nib'
+@import "../../../../../styles/component/vars"
+@import "../../../../../styles/component/mixin"
 
 global-reset()
 reset-html5()
 
-
 .content
-	p
-		background-color: #ddd
+	@import 'editor/content'
 
-._c
-	p
-		background-color: #eaa
