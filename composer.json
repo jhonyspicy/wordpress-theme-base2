@@ -17,6 +17,7 @@
 		"wpackagist-plugin/wp-multibyte-patch": "*",
 		"wpackagist-plugin/force-regenerate-thumbnails": "2.0.*",
 		"atomita/wordpress-thumbnail-filename-changer": "0.1.*",
+		"atomita/wordpress-breadcrumb-navigation": "*",
 		"twig/twig": "1.*"
 	},
 	"autoload": {

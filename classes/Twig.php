@@ -22,6 +22,6 @@ class Twig extends \atomita\Facade
 
 	static function render($template, array $context = array()){
 		$twig = static::facadeInstance();
-		echo $twig->render($template, array_merge(array('func' => new MethodIsFunction), $context));
+		echo $twig->render($template, array_merge(array('func' => new MethodIsFunction,'tl' => new Template(),), $context));
 	}
 }
