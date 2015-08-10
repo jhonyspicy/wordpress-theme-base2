@@ -85,7 +85,7 @@ abstract class Taxonomy extends Super {
 		$checked_list = $this->check_value($_POST);
 
 		foreach($checked_list as $key => $val) {
-			if ($val) {
+			if ($val == '') {
 				update_option("taxonomy_{$term_id}_{$key}", $val);
 			} else {
 				delete_option("taxonomy_{$term_id}_{$key}");
