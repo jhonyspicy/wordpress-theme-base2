@@ -23,7 +23,7 @@ class Banner extends \WP_Widget {
 		$image_url = empty($instance['image_url']) ? '' : esc_attr($instance['image_url']);
 		$image_tag = '';
 		if ($image_url) {
-			$image_tag = wp_get_attachment_image(\Thumbnail::get_attachment_id($image_url), 'full', false, array('alt' => $title));
+			$image_tag = wp_get_attachment_image(\Media::get_attachment_id($image_url), 'full', false, array('alt' => $title));
 		}
 
 		echo $args['before_widget'];

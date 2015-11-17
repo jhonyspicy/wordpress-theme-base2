@@ -6,4 +6,4 @@ require __DIR__ . '/vendor/autoload.php';
 \atomita\wordpress\BreadcrumbNavigationFacade::expandFunction(); //パンくず
 
 Theme::add_hooks();
-Thumbnail::add_hooks();
+Media::add_hooks();

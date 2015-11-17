@@ -1,5 +1,5 @@
 <?php
-class Thumbnail {
+class Media {
 	static $size_list = array(
 		'_thumb_size' => array(
 			'w'    => 200,
@@ -123,8 +123,8 @@ class Thumbnail {
 	 * 必要なフックを登録する
 	 */
 	static public function add_hooks() {
-		add_action('after_setup_theme', array('Thumbnail', 'register_image_size'));
-		add_action('post_thumbnail_size', array('Thumbnail', 'post_thumbnail_size'));
-		add_action('post_thumbnail_html', array('Thumbnail', 'post_thumbnail_html'), 10, 5);
+		add_action('after_setup_theme', array(__CLASS__, 'register_image_size'));
+		add_action('post_thumbnail_size', array(__CLASS__, 'post_thumbnail_size'));
+		add_action('post_thumbnail_html', array(__CLASS__, 'post_thumbnail_html'), 10, 5);
 	}
 }
