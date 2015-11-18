@@ -75,10 +75,15 @@ abstract class Widgets {
 
 		foreach(self::$widgetList as $widget) {
 			$widgetName = self::name($widget);
-			$file_path = '/scripts/admin/widgets/'. $widgetName .'.js';
 
-			if (is_file(get_template_directory() . $file_path)) {
-				wp_enqueue_script($widgetName . '_script', get_template_directory_uri() . $file_path, array('jquery'), '1.0.0', true);
+			if (method_exists($widget, 'admin_print_scripts')) {
+				call_user_func(array($widget, 'admin_print_scripts'));
+			} else {
+				$file_path = '/scripts/admin/widgets/'. $widgetName .'.js';
+
+				if (is_file(get_template_directory() . $file_path)) {
+					wp_enqueue_script($widgetName . '_script', get_template_directory_uri() . $file_path, array('jquery'), '1.0.0', true);
+				}
 			}
 		}
 	}
@@ -86,10 +91,15 @@ abstract class Widgets {
 	static public function admin_print_styles() {
 		foreach(self::$widgetList as $widget) {
 			$widgetName = self::name($widget);
-			$file_path = '/styles/admin/widgets/'. $widgetName .'/style.css';
 
-			if (is_file(get_template_directory() . $file_path)) {
-				wp_enqueue_style($widgetName, get_template_directory_uri() . $file_path, array(), '1.0.0');
+			if (method_exists($widget, 'admin_print_styles')) {
+				call_user_func(array($widget, 'admin_print_styles'));
+			} else {
+				$file_path = '/styles/admin/widgets/'. $widgetName .'/style.css';
+
+				if (is_file(get_template_directory() . $file_path)) {
+					wp_enqueue_style($widgetName, get_template_directory_uri() . $file_path, array(), '1.0.0');
+				}
 			}
 		}
 	}
