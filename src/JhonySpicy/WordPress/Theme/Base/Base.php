@@ -115,8 +115,6 @@ class Base {
 		//ウィジェットの登録
 		if (array_key_exists('WP_Widget', self::$classes)) {
 			add_action('widgets_init', function () use ($self) {
-				Widgets::widgets_init();
-
 				foreach($self::$classes['WP_Widget'] as $widget) {
 					Widgets::register_widget($widget);
 				}

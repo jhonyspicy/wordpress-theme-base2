@@ -46,17 +46,6 @@ abstract class Widgets {
 	}
 
 	/**
-	 * 不要なウィジェットを排除する
-	 */
-	static public function widgets_init() {
-		global $wp_widget_factory;
-		//不要なウィジェットをカット
-		foreach ($wp_widget_factory->widgets as $widget_class => $widget) {
-			unregister_widget($widget_class);
-		}
-	}
-
-	/**
 	 * 実際にウィジェットを登録する
 	 */
 	static public function register_widget($widget) {
