@@ -68,6 +68,6 @@ class Setting extends MenuPage {
 
 	public function admin_print_scripts() {
 		wp_enqueue_media(); //これがないとjavascriptで「wp.media()」実行時にエラーとなる。詳細は不明
-		wp_enqueue_script($this->name() . '_script', get_template_directory_uri() . '/js/admin/menu_page/'. $this->name() .'.js', array('jquery', 'jquery-ui-datepicker', 'jquery-ui-draggable'), '1.0.0', true);
+		wp_enqueue_script($this->name() . '_script', get_template_directory_uri() . '/scripts/admin/menu_page/'. $this->name() .'.js', array('jquery', 'jquery-ui-datepicker', 'jquery-ui-draggable'), '1.0.0', true);
 	}
 }
